@@ -1,0 +1,6 @@
+Install:
+dmenu
+rofi
+pcmanfm
+i3lock
+
