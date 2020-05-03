@@ -3,4 +3,15 @@ dmenu
 rofi
 pcmanfm
 i3lock
+gvfs gvfs-smb
+bluetooth packages (follow wiki)
+
+## picom
+replaces compton
+sudo pacman -S picom
+config file at: /etc/xdg
+
+## i3 config file on arch is at ~/.config/i3/config
+
+
 
