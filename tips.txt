@@ -11,6 +11,7 @@ gvfs gvfs-smb
 bluetooth packages (follow wiki)
 brightnessctl (for screen brightness) sudo pacman -S brightnessctl (ex.: brightnessctl set +10% ou brightnessctl set 50%)
 copyq (clipboard manager)
+htop
 
 ## picom
 replaces compton

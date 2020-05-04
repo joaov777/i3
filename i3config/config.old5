@@ -227,8 +227,7 @@ bar {
         font pango:Source Code Variable 8
         
         colors {
-        #background #222D31
-        background #0d0d0d
+        background #222D31
         statusline #F9FAF9
         separator  #454947
 
