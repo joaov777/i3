@@ -10,6 +10,7 @@ pulseaudio-ctl
 gvfs gvfs-smb
 bluetooth packages (follow wiki)
 brightnessctl (for screen brightness) sudo pacman -S brightnessctl (ex.: brightnessctl set +10% ou brightnessctl set 50%)
+copyq (clipboard manager)
 
 ## picom
 replaces compton
@@ -27,4 +28,4 @@ config file at: /etc/xdg
 
 ##pulseaudio-ctl serve para mudanca do volume pelo terminal ($mod+Up ou $mod+Down)
 
-##
+##copyq config file is located at ~/.config/copyq
