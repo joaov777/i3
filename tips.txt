@@ -2,6 +2,7 @@ Install:
 dmenu
 rofi
 pcmanfm
+polybar
 i3lock
 gvfs gvfs-smb
 bluetooth packages (follow wiki)
@@ -17,4 +18,6 @@ config file at: /etc/xdg
 ## rofi theme is select by running the application and pressing Mod+r (/usr/bin/rofi -show run)
 ## rofi config file is at ~/.config/rofi and the themes are located at /usr/share/rofi/themes
 
+## i3status config file is located at /etc/i3status.conf
 
+## polybar config file is located at ~/.config/polybar/config
