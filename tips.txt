@@ -4,6 +4,7 @@ rofi
 pcmanfm
 polybar
 i3lock
+pulseaudio-ctl
 gvfs gvfs-smb
 bluetooth packages (follow wiki)
 brightnessctl (for screen brightness) sudo pacman -S brightnessctl (ex.: brightnessctl set +10% ou brightnessctl set 50%)
@@ -21,3 +22,5 @@ config file at: /etc/xdg
 ## i3status config file is located at /etc/i3status.conf
 
 ## polybar config file is located at ~/.config/polybar/config
+
+##pulseaudio-ctl serve para mudanca do volume pelo terminal ($mod+Up ou $mod+Down)
