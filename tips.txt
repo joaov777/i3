@@ -13,5 +13,7 @@ config file at: /etc/xdg
 
 ## i3 config file on arch is at ~/.config/i3/config
 
+## rofi theme is select by running the application and pressing Mod+r (/usr/bin/rofi -show run)
+## rofi config file is at ~/.config/rofi and the themes are located at /usr/share/rofi/themes
 
 
