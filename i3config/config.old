@@ -53,14 +53,29 @@ exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
+# rofi
+bindsym $mod+o exec /usr/bin/rofi -show run
 
+# screenshot tool
+bindsym Print exec --no-startup-id /usr/bin/flameshot gui 
+
+# clipboard manager
+exec --no-startup-id exec /usr/bin/copyq
+
+# enable screenlock
+bindsym F10 exec /usr/bin/i3lock --color=#000000
+
+# enable compositor
 exec --no-startup-id picom
+
+# file manager for i3
+bindsym $mod+e exec /usr/bin/pcmanfm
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-	bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+Return exec /usr/bin/termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -244,3 +259,10 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+
+
+
+
+
+

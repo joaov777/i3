@@ -60,7 +60,13 @@ bindsym $mod+o exec /usr/bin/rofi -show run
 bindsym Print exec --no-startup-id /usr/bin/flameshot gui 
 
 # clipboard manager
-exec --no-startup-id exec /usr/bin/copyq
+exec --no-startup-id /usr/bin/copyq
+
+exec --no-startup-id xfce4-power-manager
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id setcursor
+exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id nm-applet
 
 # enable screenlock
 bindsym F10 exec /usr/bin/i3lock --color=#000000
@@ -213,6 +219,19 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         position bottom
+        
+        colors {
+        background #222D31
+        statusline #F9FAF9
+        separator  #454947
+
+#                      border  backgr. text
+        focused_workspace  #ffffff #222D31 #EEE8D5
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #222D31 #EEE8D5
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
+    }
 }
 bindsym $mod+m bar mode toggle
 
