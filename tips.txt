@@ -1,9 +1,11 @@
 Install:
 dmenu
 rofi
+wifi-menu (trizen -S wifi-menu)
 pcmanfm
 polybar
 i3lock
+acpi (for full info on battery leves: acpi -V ou bl)
 pulseaudio-ctl
 gvfs gvfs-smb
 bluetooth packages (follow wiki)
@@ -24,3 +26,5 @@ config file at: /etc/xdg
 ## polybar config file is located at ~/.config/polybar/config
 
 ##pulseaudio-ctl serve para mudanca do volume pelo terminal ($mod+Up ou $mod+Down)
+
+##
