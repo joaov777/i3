@@ -35,7 +35,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-
 # --------------- >>> AUDIO SECTION <<< --------------------- #
 exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
@@ -147,7 +146,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -228,7 +227,7 @@ bar {
         status_command py3status -c /etc/i3status.conf
         position bottom
         font pango:Source Code Variable 8
-        tray_output none
+        #tray_output none
         
         colors {
         #background #222D31
@@ -270,8 +269,7 @@ bar {
     }
 }
 
-#hiding bar with id bar02
-#bindsym $mod+m bar mode toggle bar02
+bindsym $mod+m bar mode toggle
 
 # Set inner/outer gaps
 gaps inner 9
