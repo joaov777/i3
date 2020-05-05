@@ -4,7 +4,7 @@ rofi
 wifi-menu (trizen -S wifi-menu)
 pcmanfm
 polybar
-i3lock
+i3lock ou i3lock-fancy-git
 acpi (for full info on battery leves: acpi -V ou bl)
 pulseaudio-ctl
 gvfs gvfs-smb

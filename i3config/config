@@ -80,7 +80,8 @@ exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id nm-applet
 
 # enable screenlock
-bindsym F10 exec /usr/bin/i3lock --color=#000000
+#bindsym F10 exec /usr/bin/i3lock --color=#000000
+bindsym F10 exec /usr/bin/i3lock-fancy 
 
 # enable compositor
 exec --no-startup-id picom
