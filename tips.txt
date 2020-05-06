@@ -16,6 +16,17 @@ htop
 speedtest-cli
 iw
 py3status
+
+>>>> for monitors <<<<
+xorg-xrandr
+arandr (graphical interface for setting up monitors)
+important to set on the i3config file => exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
+
+xrandr
+xrandr --output HDMI-0 --auto --left-of DVI-1
+xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
+
+
 sudo pacman -S xorg-server xorg-apps xorg-init --noconfirm --needed
 
 sudo pacman -S i3 --noconfirm
