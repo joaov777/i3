@@ -16,6 +16,11 @@ htop
 speedtest-cli
 iw
 py3status
+nitrogen (wallpapers)
+netctl (wifi-menu, etc)
+lxappearance
+
+
 trizen pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils --noconfirm --needed
 >>>> for monitors <<<<
 xorg-xrandr
