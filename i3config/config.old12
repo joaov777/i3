@@ -253,7 +253,6 @@ bar {
         #tray_output none
         position top
         font pango:Source Code Variable 8
-        workspace_buttons no
         
         colors {
         #background #222D31
