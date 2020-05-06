@@ -7,6 +7,7 @@ polybar
 i3lock ou i3lock-fancy-git
 acpi (for full info on battery leves: acpi -V ou bl)
 pulseaudio-ctl
+pulseaudio-alsa
 gvfs gvfs-smb
 bluetooth packages (follow wiki)
 brightnessctl (for screen brightness) sudo pacman -S brightnessctl (ex.: brightnessctl set +10% ou brightnessctl set 50%)
@@ -15,6 +16,19 @@ htop
 speedtest-cli
 iw
 py3status
+sudo pacman -S xorg-server xorg-apps xorg-init --noconfirm --needed
+
+sudo pacman -S i3 --noconfirm
+
+sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm --needed
+
+sudo pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome --noconfirm --needed
+
+sudo pacman -S alsa-utils alsa-plugins alsa-lib pavucontrol --noconfirm --needed
+
+sudo pacman -S rxvt-unicode ranger rofi conky dmenu urxvt-perls perl-anyevent-i3 perl-json-xs --noconfirm --needed
+
+sudo pacman -S atool highlight browsh elinks mediainfo w3m ffmpegthumbnailer mupdf --noconfirm --needed
 
 ## picom
 replaces compton
