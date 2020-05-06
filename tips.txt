@@ -16,7 +16,7 @@ htop
 speedtest-cli
 iw
 py3status
-
+trizen pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils --noconfirm --needed
 >>>> for monitors <<<<
 xorg-xrandr
 arandr (graphical interface for setting up monitors)
