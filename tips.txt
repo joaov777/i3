@@ -22,10 +22,27 @@ xorg-xrandr
 arandr (graphical interface for setting up monitors)
 important to set on the i3config file => exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
 
+#listando os monitores atualmente reconhecidos
+xrandr --listmonitors ou xrandr --current 
+
+#habilitando o monitor HDMI-1 em Full HD e na esquerda do monitor eDP-1
+xrandr --output HDMI-1 --mode '1920x1080' --left-of eDP-1
+
+#habilitando o monitor DP-2 em Full HD e na direita do monitor eDP-1
+xrandr --output DP-2 --mode '1920x1080' --right-of eDP-1
+
+#desabilitando algum monitor
+xrandr --output HDMI-1 --off
+
+#habilitando o monitor eDP-1 na resolucao HD
+xrandr --output eDP-1 --mode '1366x768'
+
+
+
 xrandr
 xrandr --output HDMI-0 --auto --left-of DVI-1
 xrandr --output HDMI-1 --mode '1920x1080' --left-of DP-2
-
+>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 sudo pacman -S xorg-server xorg-apps xorg-init --noconfirm --needed
 
