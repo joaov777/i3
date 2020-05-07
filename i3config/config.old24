@@ -60,8 +60,7 @@ bindsym Print exec --no-startup-id /usr/bin/flameshot gui
 
 # clipboard manager
 #bindsym $mod+c exec /usr/bin/copyq && /usr/bin/copyq toggle 
-bindsym $mod+c exec /usr/bin/copyq menu
-exec --no-startup-id /usr/bin/copyq
+bindsym $mod+c exec /usr/bin/copyq && /usr/bin/copyq menu
 
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id ff-theme-util
