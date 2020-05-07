@@ -30,17 +30,14 @@ exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 #volume up by 5% increment
-bindsym $mod+u exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% 
+bindsym $mod+u exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% && notify-send -t 1 "Volume Up!" "$(pulseaudio-ctl full-status | cut -c1-3)%"
 
 #volume down by 5% increment
-bindsym $mod+d exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% 
+bindsym $mod+d exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% && notify-send -t 1 "Volume Down!" "$(pulseaudio-ctl full-status | cut -c1-3)%"
+
 
 #complete mute
-bindsym $mod+s exec --no-startup-id /usr/bin/pulseaudio-ctl mute 
-
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+s exec --no-startup-id /usr/bin/pulseaudio-ctl mute && notify-send -t 1 "Mute" "0%"
 #==========================| AUDIO SECTION END
 
 #==========================> PERSONAL APPS
