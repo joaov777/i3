@@ -19,6 +19,8 @@ py3status
 nitrogen (wallpapers)
 netctl (wifi-menu, etc)
 lxappearance
+vlc
+
 
 
 trizen pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils --noconfirm --needed
