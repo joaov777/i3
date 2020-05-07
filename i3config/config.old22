@@ -30,6 +30,7 @@ exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 #volume up by 5% increment
+#bindsym $mod+u exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% AVAILABLE
 bindsym $mod+Right exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% 
 bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up 10%
 
@@ -96,11 +97,6 @@ bindsym $mod+Up exec --no-startup-id /usr/bin/brightnessctl set +20
 #==========================| SCREEN BRIGHTNESS END
 
 #==========================> GENERAL COMMANDS
-#set keyabord to brazilian portuguese
-bindsym $mod+b exec /usr/bin/setxkbmap -layout br -model abnt2
-
-#set keyboard layout to us alt intl
-bindsym $mod+u exec /usr/bin/setxkbmap us intl
 
 #reboot system
 bindsym $mod+r exec /sbin/reboot
