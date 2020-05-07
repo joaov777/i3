@@ -41,6 +41,10 @@ bindsym $mod+s exec --no-startup-id /usr/bin/pulseaudio-ctl mute && notify-send 
 #==========================| AUDIO SECTION END
 
 #==========================> PERSONAL APPS
+#screen brightness
+bindsym XF86MonBrightnessDown exec --no-srartup-id xbacklight -5
+bindsym XF86MonBrightnessUp exec --no-srartup-id xbacklight +5
+
 # polybar
 #exec_always --no-startup-id polybar -r mybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh 
@@ -82,10 +86,6 @@ bindsym $mod+Return exec /usr/bin/termite
 #==========================| PERSONAL APPS END
 
 #==========================> GENERAL COMMANDS
-#screen brightness
-bindsym XF86MonBrightnessDown exec --no-srartup-id xbacklight -5
-bindsym XF86MonBrightnessUp exec --no-srartup-id xbacklight +5
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 

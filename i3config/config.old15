@@ -82,10 +82,6 @@ bindsym $mod+Return exec /usr/bin/termite
 #==========================| PERSONAL APPS END
 
 #==========================> GENERAL COMMANDS
-#screen brightness
-bindsym XF86MonBrightnessDown exec --no-srartup-id xbacklight -5
-bindsym XF86MonBrightnessUp exec --no-srartup-id xbacklight +5
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
