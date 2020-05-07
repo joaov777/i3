@@ -89,12 +89,6 @@ bindsym $mod+Return exec /usr/bin/termite
 bindsym XF86MonBrightnessDown exec --no-srartup-id xbacklight -5
 bindsym XF86MonBrightnessUp exec --no-srartup-id xbacklight +5
 
-#reboot system
-bindsym $mod+r exec /sbin/reboot
-
-#quit system
-bindsym $mod+q exec /sbin/shutdown -h now
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -212,8 +206,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 #==========================> RESIZING
 # resize window (you can also use the mouse for that)
-#arranging the windows
-bindsym $mod+a mode "resize"
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -232,10 +225,10 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+a
+        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+a mode "default"
+        bindsym $mod+r mode "default"
 }
 #==========================| RESIZING END
 
