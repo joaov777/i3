@@ -74,8 +74,8 @@ bindsym F10 exec /usr/bin/i3lock-fancy
 # enable compositor
 exec --no-startup-id picom
 
-# file manager 
-bindsym $mod+e exec /usr/bin/thunar
+# file manager for i3
+bindsym $mod+e exec /usr/bin/pcmanfm
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
