@@ -96,12 +96,6 @@ bindsym $mod+Up exec --no-startup-id /usr/bin/brightnessctl set +20
 #==========================| SCREEN BRIGHTNESS END
 
 #==========================> GENERAL COMMANDS
-#switch to left workspace
-bindsym $mod+n workspace next
-
-#switch to right workspace
-bindsym $mod+p workspace prev
-
 #set keyabord to brazilian portuguese
 bindsym $mod+b exec /usr/bin/setxkbmap -layout br -model abnt2
 
