@@ -30,19 +30,17 @@ exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 #volume up by 5% increment
-#bindsym $mod+u exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% AVAILABLE
-bindsym $mod+Right exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% 
-bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up 10%
+bindsym $mod+u exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% 
 
 #volume down by 5% increment
-#bindsym $mod+d exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% AVAILABLE
-bindsym $mod+Left exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% 
-bindsym XF86AudioLowerVolume exec /usr/bin/pulseaudio-ctl down 10%
+bindsym $mod+d exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% 
 
 #complete mute
 bindsym $mod+s exec --no-startup-id /usr/bin/pulseaudio-ctl mute 
-bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute 
 
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 #==========================| AUDIO SECTION END
 
 #==========================> PERSONAL APPS
@@ -86,17 +84,10 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/termite
 #==========================| PERSONAL APPS END
 
-#==========================> SCREEN BRIGHTNESS COMMANDS
-#screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/brightnessctl set 20-
-bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/brightnessctl set +20
-
-bindsym $mod+Down exec --no-startup-id /usr/bin/brightnessctl set 20-
-bindsym $mod+Up exec --no-startup-id /usr/bin/brightnessctl set +20
-
-#==========================| SCREEN BRIGHTNESS END
-
 #==========================> GENERAL COMMANDS
+#screen brightness
+bindsym XF86MonBrightnessDown exec --no-srartup-id xbacklight -5
+bindsym XF86MonBrightnessUp exec --no-srartup-id xbacklight +5
 
 #reboot system
 bindsym $mod+r exec /sbin/reboot
@@ -124,6 +115,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left AVAILABLE
+bindsym $mod+Right focus right AVAILABLE
 
 # move focused window
 bindsym $mod+Shift+h move left
