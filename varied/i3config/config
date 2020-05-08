@@ -301,7 +301,7 @@ mode "$mode_gaps_outer" {
 
 #==========================> VPN MODE
 bindsym Shift+v mode "$VPN_MODE"
-set $VPN_MODE VPN MODEb (i) ifce, (n) nordvpn
+set $VPN_MODE VPN MODE: (i) ifce, (n) nordvpn
 mode "$VPN_MODE" {
      
     #connect to ifce vpn 
