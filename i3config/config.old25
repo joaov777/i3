@@ -1,5 +1,4 @@
 #joaov777 i3config file
-
 #==========================> BEGINNING OF FILE
 set $mod Mod4
 
@@ -23,10 +22,35 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+#==========================> AUDIO SECTION
+exec --no-startup-id volumeicon
+#exec bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio -k && pulseaudio --start
+exec --no-startup-id pa-applet
+bindsym $mod+Ctrl+m exec pavucontrol
+
+#volume up by 5% increment
+bindsym $mod+Right exec --no-startup-id /usr/bin/pulseaudio-ctl up 10% 
+bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up 10%
+
+#volume down by 5% increment
+#bindsym $mod+d exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% AVAILABLE
+bindsym $mod+Left exec --no-startup-id /usr/bin/pulseaudio-ctl down 10% 
+bindsym XF86AudioLowerVolume exec /usr/bin/pulseaudio-ctl down 10%
+
+#complete mute
+bindsym $mod+s exec --no-startup-id /usr/bin/pulseaudio-ctl mute 
+bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute 
+
+#==========================| AUDIO SECTION END
+
 #==========================> PERSONAL APPS
 # polybar
 #exec_always --no-startup-id polybar -r mybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh 
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
 
 # rofi
 bindsym Ctrl+space exec /usr/bin/rofi -show run
@@ -62,18 +86,34 @@ floating_modifier $mod
 bindsym $mod+Return exec /usr/bin/termite
 #==========================| PERSONAL APPS END
 
+#==========================> SCREEN BRIGHTNESS COMMANDS
+#screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/brightnessctl set 20-
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/brightnessctl set +20
+
+bindsym $mod+Down exec --no-startup-id /usr/bin/brightnessctl set 20-
+bindsym $mod+Up exec --no-startup-id /usr/bin/brightnessctl set +20
+
+#==========================| SCREEN BRIGHTNESS END
+
 #==========================> GENERAL COMMANDS
 #switch to left workspace
-bindsym mod1+l workspace next
+bindsym $mod+n workspace next
 
 #switch to right workspace
-bindsym mod1+h workspace prev
+bindsym $mod+p workspace prev
 
 #set keyabord to brazilian portuguese
 bindsym $mod+b exec /usr/bin/setxkbmap -layout br -model abnt2
 
 #set keyboard layout to us alt intl
 bindsym $mod+u exec /usr/bin/setxkbmap us intl
+
+#reboot system
+bindsym $mod+r exec /sbin/reboot
+
+#quit system
+bindsym $mod+q exec /sbin/shutdown -h now
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -102,6 +142,12 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# alternatively, you can use the cursor keys:
+#bindsym $mod+Shift+Left move left AVAILABLE
+#bindsym $mod+Shift+Down move down AVAILABLE
+#bindsym $mod+Shift+Up move up AVAILABLE
+#bindsym $mod+Shift+Right move right AVAILABLE
+
 # split in horizontal orientation
 bindsym $mod+i split h
 
@@ -111,6 +157,15 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+w layout tabbed AVAILABLE
+#bindsym $mod+e layout toggle split AVAILABLE
+
+# toggle tiling / floating
+#bindsym $mod+Shift+space floating toggle AVAILABLE
+
+# focus the parent container
+#bindsym $mod+a focus parent AVAILABLE
 #==========================| GENERAL COMMANDS END
 
 #==========================> MULTI-MONITOR
@@ -216,7 +271,7 @@ bar {
         statusline #F9FAF9
         separator  #454947
 
-#                     	    border  backgr. text
+ #                     border  backgr. text
         focused_workspace  #ffffff #222D31 #EEE8D5
         active_workspace   #595B5B #353836 #FDF6E3
         inactive_workspace #595B5B #222D31 #EEE8D5
@@ -241,7 +296,7 @@ bar {
         statusline #F9FAF9
         separator  #454947
 
-#                           border  backgr. text
+ #                     border  backgr. text
         focused_workspace  #ffffff #222D31 #EEE8D5
         active_workspace   #595B5B #353836 #FDF6E3
         inactive_workspace #595B5B #222D31 #EEE8D5
@@ -251,7 +306,8 @@ bar {
 }
 
 #hiding bar with id bar02
-bindsym $mod+m bar mode toggle bar02
+#bindsym $mod+m bar mode toggle bar02
+
 #==========================| BARS END
 
 #==========================> GAPS
@@ -300,94 +356,4 @@ mode "$mode_gaps_outer" {
 }
 #==========================| GAPS END
 
-#==========================> VPN MODE
-bindsym Shift+v mode "$VPN_MODE"
-set $VPN_MODE Choose: (i) ifce, (n) nordvpn
-mode "$VPN_MODE" {
-     
-    #connect to ifce vpn 
-    bindsym i exec sudo openvpn --config ~/joao.galvino.ifce.ovpn
-    bindsym Shift+i exec sudo pkill openvpn
-    
-    #connect to nord vpn
-    bindsym n exec /usr/bin/nordvpn connect United_States
-    bindsym Shift+n exec /usr/bin/nordvpn disconnect
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-    bindsym Shift+v mode "default"
-}
-#==========================| VPN MODE END
-
-#==========================> MEDIA MODE
-#audio general commands
-exec --no-startup-id volumeicon
-#exec bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-exec --no-startup-id pulseaudio -k && pulseaudio --start
-exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
-
-bindsym Shift+m mode "$MEDIA_MODE"
-
-set $MEDIA_MODE Choose: (a) audio, (b) brightness
-mode "$MEDIA_MODE" {
-     
-    bindsym a	mode "$media_mode_audio"
-    bindsym b	mode "$media_mode_brightness"
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-    bindsym Shift+m mode "default"
-}
-
-mode "$media_mode_audio" {
-        
-        #turn up volume by 10%
-        bindsym plus exec /usr/bin/pulseaudio-ctl up 10%
-        bindsym Up exec /usr/bin/pulseaudio-ctl up 10%
-        
-        #turn down volume by 10%
-        bindsym minus exec /usr/bin/pulseaudio-ctl down 10%
-        bindsym Down exec /usr/bin/pulseaudio-ctl down 10%
-	
-	#mute
-	bindsym m exec /usr/bin/pulseaudio-ctl mute 
-	bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute 
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
-}
-
-mode "$media_mode_brightness" {
-
-        #turn up brightness by 20%
-        bindsym plus exec /usr/bin/brightnessctl set +20
-        bindsym Up exec /usr/bin/brightnessctl set +20
-        
-        #turn down brightness by 20%
-        bindsym minus exec /usr/bin/brightnessctl set 20-
-        bindsym Down exec /usr/bin/brightnessctl set 20-
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Shift+m mode "default"
-}
-#==========================| MEDIA MODE END
-
-#==========================| SYSTEM MODE
-
-bindsym Shift+s mode "$SYSTEM_MODE"
-
-set $SYSTEM_MODE Choose: (r) reboot, (s) shutdown
-mode "$SYSTEM_MODE" {
-     
-    bindsym r	exec /sbin/reboot
-    bindsym s	exec /sbin/shutdown -h now
-    
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-    bindsym Shift+s mode "default"
-}
-#==========================| SYSTEM MODE END
-
-#==========================| END OF FILE
+#==========================> END OF FILE
