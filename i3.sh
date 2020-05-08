@@ -19,7 +19,7 @@
     
 
     case $menuChoice in
-            0) ~/i3/mainmenuscripts/exitmainconf.sh ; exit ;;
+            0) ~/i3/mainmenuscripts/exiti3.sh ; exit ;;
             1) ~/i3/mainmenuscripts/updatesystem.sh ;;
             2) ~/i3/mainmenuscripts/updatepackages.sh ;;
             3) ~/i3/mainmenuscripts/enableconfigfiles.sh ;;
