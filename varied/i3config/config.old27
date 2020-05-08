@@ -50,7 +50,7 @@ exec --no-startup-id nm-applet
 bindsym F10 exec /usr/bin/i3lock-fancy 
 
 # enable compositor
-exec --no-startup-id picom -b
+exec --no-startup-id picom
 
 # file manager 
 bindsym $mod+e exec /usr/bin/thunar
@@ -250,7 +250,8 @@ bar {
     }
 }
 
-
+#hiding bar with id bar02
+bindsym $mod+m bar mode toggle bar02
 #==========================| BARS END
 
 #==========================> GAPS
@@ -301,7 +302,7 @@ mode "$mode_gaps_outer" {
 
 #==========================> VPN MODE
 bindsym Shift+v mode "$VPN_MODE"
-set $VPN_MODE VPN MODEb (i) ifce, (n) nordvpn
+set $VPN_MODE Choose: (i) ifce, (n) nordvpn
 mode "$VPN_MODE" {
      
     #connect to ifce vpn 
@@ -328,8 +329,9 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 bindsym Shift+m mode "$MEDIA_MODE"
 
-set $MEDIA_MODE MEDIA MODE: (a) audio, (b) brightness
+set $MEDIA_MODE Choose: (a) audio, (b) brightness
 mode "$MEDIA_MODE" {
+     
     bindsym a	mode "$media_mode_audio"
     bindsym b	mode "$media_mode_brightness"
     bindsym Escape mode "default"
@@ -338,6 +340,7 @@ mode "$MEDIA_MODE" {
 }
 
 mode "$media_mode_audio" {
+        
         #turn up volume by 10%
         bindsym plus exec /usr/bin/pulseaudio-ctl up 10%
         bindsym Up exec /usr/bin/pulseaudio-ctl up 10%
@@ -356,6 +359,7 @@ mode "$media_mode_audio" {
 }
 
 mode "$media_mode_brightness" {
+
         #turn up brightness by 20%
         bindsym plus exec /usr/bin/brightnessctl set +20
         bindsym Up exec /usr/bin/brightnessctl set +20
@@ -371,9 +375,10 @@ mode "$media_mode_brightness" {
 #==========================| MEDIA MODE END
 
 #==========================| SYSTEM MODE
+
 bindsym Shift+s mode "$SYSTEM_MODE"
 
-set $SYSTEM_MODE SYSTEM MODE: (r) reboot, (s) shutdown
+set $SYSTEM_MODE Choose: (r) reboot, (s) shutdown
 mode "$SYSTEM_MODE" {
      
     bindsym r	exec /sbin/reboot
@@ -384,22 +389,5 @@ mode "$SYSTEM_MODE" {
     bindsym Shift+s mode "default"
 }
 #==========================| SYSTEM MODE END
-
-#==========================> BARS MODE
-bindsym Shift+h mode "$BARS_MODE"
-set $BARS_MODE BAR MODE: (t) top bar, (b) bottom bar
-mode "$BARS_MODE" {
-
-    #hide top bar (bar02)
-    bindsym t bar mode hide bar02 
-    bindsym Shift+t bar mode toggle bar02 
-    bindsym b bar mode toggle bar01 
-    bindsym Shift+b bar mode toggle bar01 
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-    bindsym Shift+h mode "default"
-}
-#==========================| VPN MODE END
 
 #==========================| END OF FILE
