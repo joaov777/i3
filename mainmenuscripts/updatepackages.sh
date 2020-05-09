@@ -34,7 +34,7 @@ packages_required=(
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
 	veracrypt papirus-icon-theme neofetch lxappearance vlc picom \
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init \ 
-	imagewriter albert wget dnsutils xorg-xrandr arandr \ 
+	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation \
     ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome \
