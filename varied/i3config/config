@@ -24,6 +24,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 #==========================> PERSONAL APPS
+# starting the system with english us keyboard layout
+exec --no-startup-id setxkbmap us intl
+
 # polybar
 #exec_always --no-startup-id polybar -r mybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh 
