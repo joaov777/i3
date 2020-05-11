@@ -1,4 +1,11 @@
-#joaov777 i3config file
+#       ___      __ 
+#      | \ \    / / 
+#      | |\ \  / /  
+#  _   | | \ \/ /   
+# | |__| |  \  /    
+#  \____/    \/     
+#
+#  i3 config file                   
 
 #==========================> BEGINNING OF FILE
 set $mod Mod4
