@@ -223,6 +223,7 @@ bar {
         font pango:Source Code Variable 8
         tray_output none
         
+        
         colors {
         #background #222D31
         background #0d0d0d
@@ -248,6 +249,7 @@ bar {
         font pango:Source Code Variable 8
         workspace_buttons no
         
+        
         colors {
         #background #222D31
         background #0d0d0d
@@ -262,7 +264,6 @@ bar {
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
-
 
 #==========================| BARS END
 
@@ -404,10 +405,10 @@ set $BARS_MODE BAR MODE: (t) top bar, (b) bottom bar
 mode "$BARS_MODE" {
 
     #hide top bar (bar02)
-    bindsym t bar mode hide bar02 
-    bindsym Shift+t bar mode toggle bar02 
-    bindsym b bar mode toggle bar01 
-    bindsym Shift+b bar mode toggle bar01 
+    bindsym t bar mode invisible bar02 
+    bindsym Shift+t bar mode dock bar02 
+    bindsym b bar mode invisible bar01 
+    bindsym Shift+b bar mode dock bar01 
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
