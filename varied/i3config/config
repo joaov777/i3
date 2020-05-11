@@ -25,7 +25,7 @@ exec --no-startup-id nm-applet
 
 #==========================> PERSONAL APPS
 # starting the system with english us keyboard layout
-exec --no-startup-id setxkbmap us intl
+exec --no-startup-id exec setxkbmap us intl
 
 # polybar
 #exec_always --no-startup-id polybar -r mybar
