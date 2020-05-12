@@ -85,12 +85,6 @@ bindsym mod1+l workspace next
 #switch to right workspace
 bindsym mod1+h workspace prev
 
-#set keyabord to brazilian portuguese
-bindsym $mod+b exec /usr/bin/setxkbmap -layout br -model abnt2
-
-#set keyboard layout to us alt intl
-bindsym $mod+u exec /usr/bin/setxkbmap us intl
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -417,6 +411,23 @@ mode "$BARS_MODE" {
     bindsym Return mode "default"
     bindsym Shift+h mode "default"
 }
-#==========================| VPN MODE END
+#==========================| BARS MODE END
+
+#==========================> KEYBOARD LAYOUT MODE
+bindsym Shift+l mode "$KEYBOARD_MODE"
+set $KEYBOARD_MODE KEYBOARD LAYOUT MODE: (u) us , (b) pt
+mode "$KEYBOARD_MODE" {
+
+    #set keyabord to brazilian portuguese
+    bindsym b exec /usr/bin/setxkbmap -layout br -model abnt2
+
+    #set keyboard layout to us alt intl
+    bindsym u exec /usr/bin/setxkbmap us intl
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Shift+l mode "default"
+}
+#==========================| KEYBOARD LAYOUT MODE END
 
 #==========================| END OF FILE
