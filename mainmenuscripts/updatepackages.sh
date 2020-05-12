@@ -34,10 +34,10 @@ packages_required=(
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
 	veracrypt papirus-icon-theme neofetch lxappearance vlc picom \
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init \ 
-	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs \ 
+	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman \
 	noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation \
-    ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome \
+    	ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome \
 	alsa-utils alsa-plugins alsa-lib pavucontrol lightdm lightdm-gtk-greeter 
 	)
 	
