@@ -29,8 +29,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #==========================> PERSONAL APPS
 # NetworkManager is the most popular way to manage wireless networks on Linux
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-bindsym $mod+n exec --no-startup-id /usr/bin/nm-connection-editor
+exec --no-startup-id nm-applet
 
 # bluetooth applet
 exec --no-startup-id /usr/bin/blueman-applet
@@ -52,8 +51,8 @@ bindsym Ctrl+space exec /usr/bin/dmenu_run
 bindsym Print exec --no-startup-id /usr/bin/flameshot gui 
 
 # clipboard manager
-#bindsym $mod+c exec /usr/bin/copyq && /usr/bin/copyq toggle 
-bindsym $mod+c exec /usr/bin/copyq menu
+#bindsym $mod+space exec /usr/bin/copyq && /usr/bin/copyq toggle 
+bindsym $mod+space exec /usr/bin/copyq menu
 exec --no-startup-id /usr/bin/copyq
 
 exec --no-startup-id xfce4-power-manager
@@ -242,7 +241,7 @@ bar {
 	id bar02
         #status_command i3status
         status_command py3status -c /etc/i3status2.conf
-        #tray_output none
+        tray_output none
         position top
         font pango:Source Code Variable 8
         workspace_buttons no
@@ -430,5 +429,22 @@ mode "$KEYBOARD_MODE" {
     bindsym Shift+l mode "default"
 }
 #==========================| KEYBOARD LAYOUT MODE END
+
+#==========================> CONNECTIONS MODE
+bindsym Shift+c mode "$CONNECTIONS_MODE"
+set $CONNECTIONS_MODE CONNECTIONS MODE: (n) Network , (b) Bluetooth
+mode "$CONNECTIONS_MODE" {
+
+    #run network connections manager
+    bindsym n exec /usr/bin/nm-connection-editor
+
+    #run bluetooth connections manager
+    bindsym b exec /usr/bin/blueman-manager
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Shift+c mode "default"
+}
+#==========================| CONNECTIONS MODE END
 
 #==========================| END OF FILE
