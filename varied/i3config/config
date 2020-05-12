@@ -26,11 +26,11 @@ font pango:Source Code Variable 9
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+#==========================> PERSONAL APPS
 # NetworkManager is the most popular way to manage wireless networks on Linux
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-#==========================> PERSONAL APPS
 # starting the system with english us keyboard layout
 exec --no-startup-id exec setxkbmap us intl
 
