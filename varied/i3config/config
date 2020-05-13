@@ -352,10 +352,12 @@ mode "$media_mode_audio" {
         #turn up volume by 10%
         bindsym plus exec /usr/bin/pulseaudio-ctl up 10%
         bindsym Up exec /usr/bin/pulseaudio-ctl up 10%
+        bindsym k exec /usr/bin/pulseaudio-ctl up 10%
         
         #turn down volume by 10%
         bindsym minus exec /usr/bin/pulseaudio-ctl down 10%
         bindsym Down exec /usr/bin/pulseaudio-ctl down 10%
+        bindsym j exec /usr/bin/pulseaudio-ctl down 10%
 	
 	#mute
 	bindsym m exec /usr/bin/pulseaudio-ctl mute 
@@ -370,10 +372,12 @@ mode "$media_mode_brightness" {
         #turn up brightness by 20%
         bindsym plus exec /usr/bin/brightnessctl set +20
         bindsym Up exec /usr/bin/brightnessctl set +20
+        bindsym k exec /usr/bin/brightnessctl set +20
         
         #turn down brightness by 20%
         bindsym minus exec /usr/bin/brightnessctl set 20-
         bindsym Down exec /usr/bin/brightnessctl set 20-
+        bindsym j exec /usr/bin/brightnessctl set 20-
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
