@@ -32,7 +32,7 @@ packages_required=(
 	filezilla telegram-desktop copyq flameshot ranger pulseaudio-ctl speedtest-cli \
 	gedit pwgen openssh vim rdesktop i3lock i3lock-fancy mtr tmux iw py3status \
 	nmap okular viewnior ncdu inxi htop otf-fira-mono nordvpn-bin nitrogen netctl \
-	veracrypt papirus-icon-theme neofetch lxappearance vlc picom \
+	veracrypt papirus-icon-theme neofetch lxappearance vlc picom i3status \
 	arp-scan net-tools teamviewer rclone peek xorg-server xorg-apps xorg-init \ 
 	imagewriter albert wget dnsutils xorg-xrandr arandr sshfs nm-connection-editor \ 
 	pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils blueman \
