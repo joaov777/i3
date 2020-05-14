@@ -451,4 +451,27 @@ mode "$CONNECTIONS_MODE" {
 }
 #==========================| CONNECTIONS MODE END
 
+#==========================> TRAY MODE
+bindsym Shift+t mode "$TRAY_MODE"
+set $TRAY_MODE TRAY MODE: (e) Enable tray , (d) Disable tray
+mode "$TRAY_MODE" {
+
+    #run network connections manager
+    bindsym e exec /usr/bin/nm-applet && /usr/bin/trayer
+
+    #run bluetooth connections manager
+    bindsym d exec killall /usr/bin/trayer
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Shift+t mode "default"
+}
+#==========================| TRAY MODE END
+
+
+
+
+
+
+
 #==========================| END OF FILE

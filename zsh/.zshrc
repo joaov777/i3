@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
   alias keyus="setxkbmap us intl"	
   alias keybr="setxkbmap -layout br -model abnt2"	
   alias sw="nmcli dev wifi list"
-  alias cw="sudo wifi-menu"  
+  alias cw="sudo /usr/bin/nmtui"  
   alias systeminfo="inxi -Fxz"	
   alias l="ls -liar"
   alias bl="acpi -V" #check battery info  
