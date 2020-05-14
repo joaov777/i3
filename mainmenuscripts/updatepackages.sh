@@ -74,13 +74,10 @@ for pkg in "${packages_required[@]}"; do
 	fi
 done
 
-	#enabling sharing
-	sudo pacman -S gvfs-smb thunar-shares-plugin-gtk3 --noconfirm --needed 
-	sudo smb passwd -a joao
-
 	#for Thunar
-	sudo pacman -S gvfs gvfs-samba gvfs-mtp xdg-users-dirs --noconfirm --needed
+	sudo pacman -S gvfs gvfs-smb gvfs-mtp xdg-users-dirs --noconfirm --needed
 	xdg-user-dirs-update
+	sudo smb passwd -a joao
 
 	#installing cursor themes
 	sudo cp -r ~/i3/varied/cursors/* /usr/share/icons/
