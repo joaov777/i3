@@ -104,6 +104,8 @@ source $ZSH/oh-my-zsh.sh
   gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh	
   githttp(){git remote set-url origin https://github.com/joaov777/$1.git} #set git remote for http.
 
+  alias i3config="sudo vim ~/.config/i3/config"
+  alias cdi3="cd ~/i3"
   alias cdmc="cd ~/mainconf"	
   alias mainconf="~/mainconf/mainconf.sh"	
   findip(){echo " -- IP FOUND: "$(sudo arp-scan $1 | grep $2 | cut -f 1)}	
