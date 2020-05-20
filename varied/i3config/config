@@ -316,8 +316,8 @@ set $VPN_MODE VPN MODE: (i) ifce, (n) nordvpn
 mode "$VPN_MODE" {
      
     #connect to ifce vpn 
-    bindsym i exec sudo openvpn --config ~/joao.galvino.ifce.ovpn
-    bindsym Shift+i exec sudo pkill openvpn
+    #bindsym i exec sudo openvpn --config <path_to_vpn_file_here>
+    #bindsym Shift+i exec sudo pkill openvpn
     
     #connect to nord vpn
     bindsym n exec /usr/bin/nordvpn connect United_States
