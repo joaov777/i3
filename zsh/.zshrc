@@ -96,13 +96,10 @@ source $ZSH/oh-my-zsh.sh
   ms(){sudo sshfs -o allow_other $1 $2} #mount remote ssh filesystem locally
   us(){sudo umount $1} #umount file system
   mf(){[ $1 != "" ] && watch --interval 1 du -sh $1 || watch --interval 1 du -sh $PWD/} #monitor remote or local folder
-  sr(){ [[ $(sudo grep $USER /etc/sudoers) = "" ]] && sudo sed -i "/^root ALL=(ALL) ALL/a $USER ALL=(ALL) ALL" /etc/sudoers || echo "Already root"} #setting and enabling all root permissions
-  ur(){sudo sed -i "s/^$USER ALL=(ALL) ALL//g" /etc/sudoers} #unsetting and disabling all root permissions
-  cr(){ [[ $(sudo grep $USER /etc/sudoers) == "" ]] && echo "No root privileges set for user $USER" || echo "Root privileges set for $USER"} #check root privileges for current user
   mainconfpush(){cd ~/mainconf && git add . && git commit -m "$1" && git push origin master && cd -} ##pushing mainconf to git
   mainconfpull(){cd ~/mainconf && git pull && cd -}
-  gitssh(){git remote set-url origin git@github.com:joaov777/$1} #set git remote for ssh	
-  githttp(){git remote set-url origin https://github.com/joaov777/$1.git} #set git remote for http.
+  gitssh(){git remote set-url origin git@github.com:$1/$2} #set git remote for ssh	
+  githttp(){git remote set-url origin https://github.com/$1/$2.git} #set git remote for http.
 
   alias i3config="sudo vim ~/.config/i3/config"
   alias cdi3="cd ~/i3"
@@ -118,14 +115,3 @@ source $ZSH/oh-my-zsh.sh
 # UPDATES	
   alias um="sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu --noconfirm"	
   alias upup="sudo pacman -Syyuu"	
-
-# IFCE RELATED	
-  alias sshlistas="ssh operador@listas.ifce.edu.br"	
-  alias sshns1="ssh operador@ns1.ifce.edu.br"	
-  alias sshnas="ssh nassuporte@nassuporte.ifce.edu.br"	
-  alias sshnas2="ssh nassuporte2@nassuporte2.ifce.edu.br"	
-  alias gcds="rdesktop -u 'adproducao.ifce.edu.br\\Administrator' -g 1024x768 200.17.33.66"	
-  alias rdprdp="~/mainconf/scripts/rdprdp.sh"
-  alias sshcentral="ssh root@10.4.5.10"	
-  alias sshbaculadir="ssh operador@bacula-dir.ifce.edu.br"	
-  alias sshvpn="ssh operador@200.17.33.43"
